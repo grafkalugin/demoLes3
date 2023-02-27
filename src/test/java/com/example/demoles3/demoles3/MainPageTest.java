@@ -43,7 +43,7 @@ public class MainPageTest {
         mainPage.hobbiesCheckboxSports.click();
         mainPage.hobbiesCheckboxReading.click();
         mainPage.hobbiesCheckboxMusic.click();
-        mainPage.uploadPicture.uploadFile(new File("/Users/sunlab/Pictures/Monosnap/2023-02-25-14-10-52-h00g7.jpg"));
+        mainPage.uploadPicture.uploadFile(new File("src/test/resources/images/Yachting.jpg"));
         mainPage.currentAddress.setValue("currentAddressText");
         //actions().moveToElement().click();
         mainPage.selectState.click();
@@ -61,7 +61,8 @@ public class MainPageTest {
                 .shouldHave(text("Reading"))
                 .shouldHave(text("Music"))
                 .shouldHave(text("Maths"))
-                .shouldHave(text("currentAddressText"));
+                .shouldHave(text("currentAddressText"))
+                .shouldHave(text("Yachting"));
         mainPage.modalClose.click();
     }
 }
