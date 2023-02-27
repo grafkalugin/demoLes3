@@ -5,12 +5,8 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPageTest {
@@ -25,7 +21,6 @@ public class MainPageTest {
 
     @BeforeEach
     public void setUp() {
-
         open("/automation-practice-form");
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");

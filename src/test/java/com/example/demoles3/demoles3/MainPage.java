@@ -1,10 +1,8 @@
 package com.example.demoles3.demoles3;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
 // page_url = https://demoqa.com/automation-practice-form/
 public class MainPage {
@@ -25,7 +23,6 @@ public class MainPage {
     public SelenideElement hobbiesCheckboxMusic = $("#hobbiesWrapper").$(byText("Music"));
     public SelenideElement uploadPicture = $("#uploadPicture");
     public SelenideElement currentAddress = $("#currentAddress");
-    //public SelenideElement selectState = $("#state .css-1wy0on6"); //stateCity-wrapper
     public SelenideElement selectState = $("#stateCity-wrapper").$(byText("Select State")); //stateCity-wrapper
     public SelenideElement selectStateNCR = $(byText("NCR"));
     public SelenideElement selectCity = $("#stateCity-wrapper").$(byText("Select City"));
