@@ -1,4 +1,4 @@
-package com.example.demoles3.demoles3;
+package com.example.demoles3;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byText;
