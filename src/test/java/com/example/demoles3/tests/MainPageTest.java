@@ -22,6 +22,7 @@ public class MainPageTest extends TestMain {
                 .setCityDelhi()
                 .sendForm();
 
+
         mainPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", "Sasha Kalugin")
                 .verifyResult("Student Email", "name@mail.com")
