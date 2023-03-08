@@ -9,25 +9,21 @@ import static com.codeborne.selenide.Selenide.$;
 
 // page_url = https://demoqa.com/automation-practice-form/
 public class MainPage {
-    CalendarComponent cc = new CalendarComponent();
-    ModalComponent mc = new ModalComponent();
+    CalendarComponent calendarComponent = new CalendarComponent();
+    ModalComponent modalComponent = new ModalComponent();
 
     public SelenideElement firstName = $("#firstName"),
             lastName = $("#lastName"),
             userEmail = $("#userEmail"),
-            sexMale = $("#genterWrapper").$(byText("Male")),
             userNumber = $("#userNumber"),
+            sexButton = $("#genterWrapper"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesCheckboxSports = $("#hobbiesWrapper").$(byText("Sports")),
-            hobbiesCheckboxReading = $("#hobbiesWrapper").$(byText("Reading")),
-            hobbiesCheckboxMusic = $("#hobbiesWrapper").$(byText("Music")),
+            hobbiesCheckbox = $("#hobbiesWrapper"),
             uploadPicture = $("#uploadPicture"),
             currentAddress = $("#currentAddress"),
-            selectState = $("#stateCity-wrapper").$(byText("Select State")), //stateCity-wrapper
-            selectStateNCR = $(byText("NCR")),
+            selectState = $("#stateCity-wrapper").$(byText("Select State")),
             selectCity = $("#stateCity-wrapper").$(byText("Select City")),
-            selectCityDelhi = $(byText("Delhi")),
             submit = $("#submit"),
             modalClose = $("#closeLargeModal");
 
@@ -46,8 +42,8 @@ public class MainPage {
         return this;
     }
 
-    public MainPage setSexMale() {
-        sexMale.click();
+    public MainPage setSex(String sex) {
+        sexButton.$(byText(sex)).click();
         return this;
     }
 
@@ -58,7 +54,7 @@ public class MainPage {
 
     public MainPage setBirthDate(String day, String month, String year) {
         dateOfBirthInput.click();
-        cc.setDate(day, month, year);
+        calendarComponent.setDate(day, month, year);
         return this;
     }
 
@@ -67,11 +63,8 @@ public class MainPage {
         return this;
     }
 
-    public MainPage setAllHobbiesCheckbox() {
-        hobbiesCheckboxSports.click();
-        hobbiesCheckboxReading.click();
-        hobbiesCheckboxMusic.click();
-
+    public MainPage setHobbyCheckbox(String hobby) {
+        hobbiesCheckbox.$(byText(hobby)).click();
         return this;
     }
 
@@ -85,15 +78,15 @@ public class MainPage {
         return this;
     }
 
-    public MainPage setStateNCR() {
+    public MainPage setState(String state) {
         selectState.click();
-        selectStateNCR.click();
+        $(byText(state)).click();
         return this;
     }
 
-    public MainPage setCityDelhi() {
+    public MainPage setCity(String city) {
         selectCity.click();
-        selectCityDelhi.click();
+        $(byText(city)).click();
         return this;
     }
 
@@ -103,12 +96,12 @@ public class MainPage {
     }
 
     public MainPage verifyResultsModalAppears() {
-        mc.verifyModalAppears();
+        modalComponent.verifyModalAppears();
         return this;
     }
 
     public MainPage verifyResult(String key, String value) {
-        mc.verifyResult(key, value);
+        modalComponent.verifyResult(key, value);
         return this;
     }
 
