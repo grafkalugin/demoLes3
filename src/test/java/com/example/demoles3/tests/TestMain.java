@@ -14,8 +14,6 @@ import com.example.demoles3.helpers.Attach;
 
 public class TestMain {
 
-
-
     @BeforeAll
     public static void setUpAll() {
 
@@ -24,7 +22,6 @@ public class TestMain {
                 "enableVNC", true,
                 "enableVideo", true
         ));
-
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "chrome";
