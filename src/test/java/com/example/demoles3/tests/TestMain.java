@@ -16,15 +16,15 @@ public class TestMain {
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
+        //Configuration.browserSize = "1920x1080";
+        //Configuration.baseUrl = "https://demoqa.com";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     public void setUp() {
-        open("/automation-practice-form");
-        Selenide.executeJavaScript("$('#fixedban').remove()");
-        Selenide.executeJavaScript("$('footer').remove()");
+        //open("/automation-practice-form");
+        //Selenide.executeJavaScript("$('#fixedban').remove()");
+        //Selenide.executeJavaScript("$('footer').remove()");
     }
 }

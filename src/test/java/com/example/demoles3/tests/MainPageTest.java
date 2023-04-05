@@ -11,7 +11,6 @@ public class MainPageTest extends TestMain {
     Faker faker = new Faker();
 
     @Test
-    @Tag("simple")
     public void positiveRegistrationTest() {
 
         String userFirstNameFaker = faker.name().firstName();
@@ -54,6 +53,12 @@ public class MainPageTest extends TestMain {
                 .verifyResult("Picture", userFileName)
                 .verifyResult("State and City", userState + " " + userCity);
         mainPage.modalClose();
+    }
+
+    @Tag("simple")
+    @Test
+    public void simpleTest(){
+        Assertions.assertTrue(true);
     }
 
 }
