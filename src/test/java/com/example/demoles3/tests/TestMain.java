@@ -46,6 +46,6 @@ public class TestMain {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        //Attach.addVideo();
+        Attach.addVideo();
     }
 }
