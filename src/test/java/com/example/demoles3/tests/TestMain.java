@@ -36,9 +36,9 @@ public class TestMain {
     @BeforeEach
     public void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
+        open("/automation-practice-form");
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
-        open("/automation-practice-form");
     }
 
     @AfterEach
