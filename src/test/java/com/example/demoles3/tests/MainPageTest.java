@@ -11,6 +11,7 @@ public class MainPageTest extends TestMain {
     Faker faker = new Faker();
 
     @Test
+    @Tag("simple")
     public void positiveRegistrationTest() {
 
         String userFirstNameFaker = faker.name().firstName();
