@@ -10,6 +10,7 @@ public class MainPageTest extends TestMain {
     MainPage mainPage = new MainPage();
     Faker faker = new Faker();
 
+    @Tag("simple")
     @Test
     public void positiveRegistrationTest() {
 
@@ -55,7 +56,6 @@ public class MainPageTest extends TestMain {
         mainPage.modalClose();
     }
 
-    @Tag("simple")
     @Test
     public void simpleTest(){
         Assertions.assertTrue(true);
