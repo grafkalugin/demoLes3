@@ -23,11 +23,18 @@ public class TestMain {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-        //Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.browser = "chrome";
-        //Configuration.browserVersion = "100.0";
-        //Configuration.browserSize = "1920x1080";
+        /*
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "100.0";
+        Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+         */
+        String browserName = System.getProperty("browser", "chrome");
+        String browserVersion = System.getProperty("browserVersion", "100.0");
+        String browserSize = System.getProperty("browserSize", "1920x1080");
+        String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        String remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
     }
 
     @BeforeEach

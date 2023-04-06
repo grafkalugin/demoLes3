@@ -56,9 +56,11 @@ public class MainPageTest extends TestMain {
         mainPage.modalClose();
     }
 
+
     @Test
     public void simpleTest(){
         Assertions.assertTrue(true);
+        System.out.println(System.getProperty("browser"));
     }
 
 }
