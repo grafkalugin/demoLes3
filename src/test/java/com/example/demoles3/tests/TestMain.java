@@ -17,24 +17,23 @@ public class TestMain {
     @BeforeAll
     public static void setUpAll() {
 
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "99.0");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        //gradle clean simple_test -Dbrowser="chrome" -DbrowserVersion="100.0" -DbrowserSize="1900x1000" -DremoteDriverUrl="https://user1:1234@$selenoid.autotests.cloud/wd/hub/" -DbaseUrl="https://demoqa.com"
+        System.out.println(Configuration.baseUrl);
+        System.out.println(Configuration.remote);
+        System.out.println(Configuration.browser);
+        System.out.println(Configuration.browserSize);
+        System.out.println(Configuration.browserVersion);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-        /*
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "100.0";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-         */
-        String browserName = System.getProperty("browser", "chrome");
-        String browserVersion = System.getProperty("browserVersion", "100.0");
-        String browserSize = System.getProperty("browserSize", "1920x1080");
-        String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
-        String remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
     }
 
     @BeforeEach
